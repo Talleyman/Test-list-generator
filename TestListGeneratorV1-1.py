@@ -28,4 +28,5 @@ def main():
     print(Listoflists)#Prints the entire two-dimensional list to verify that everything worked correctly
     outfile.close()
     
-main()
+if __name__ == "__main__":
+    main()
