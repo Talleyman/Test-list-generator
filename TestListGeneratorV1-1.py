@@ -4,6 +4,7 @@
 #Program for generating random ranked lists
 import random
 import csv
+import doctest
 
 #This declaration creates a two-dimensional list i.e. a list of lists (the number of lists varies up to 100)
 Listoflists=[[] for _ in range(random.randrange(100))] 
@@ -16,9 +17,22 @@ def ListCreator(list1):
 '''ListShuffle takes the ordered list from ListCreator
 and shuffles the order to simulate a ranked list'''   
 def ListShuffle(list1):
+    """
+    >>> random.seed(10)
+    >>> list2=[1,2,3,4]
+    >>> random.shuffle(list2)
+    >>>list2
+    [1, 4, 2, 3]
+    """
     random.shuffle(list1)
 
 def main():
+    """
+    >>> random.seed(10)
+    >>> Randomlist=[[] for _ in range(random.randrange(5))]
+    >>> Randomlist
+    [[], []]
+    """
     outfile=open('TestLists.csv','wt')
     writer=csv.writer(outfile,lineterminator='\n')
     for element in Listoflists:
